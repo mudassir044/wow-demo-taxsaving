@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Smart Employer's Guide to Section 125 Savings | WoW Health Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Grotesk:wght@700&family=Public+Sans:wght@400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #0A0F2A;
+            color: #FFFFFF;
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Grotesk', sans-serif;
+        }
+        .wow-gradient {
+            background: linear-gradient(135deg, #1E3A8A 0%, #6B21A8 100%);
+        }
+        .wow-blue { color: #3B82F6; }
+        .wow-purple { color: #6B21A8; }
+        .wow-light-blue { color: #60A5FA; }
+        .deep-navy { background-color: #0A0F2A; }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .benefit-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+            border: 2px solid #3B82F6;
+        }
+        .cta-button:hover {
+            background-color: #3B82F6;
+            color: #0A0F2A;
+            box-shadow: 0 0 15px #3B82F6;
+        }
+        .faq-item {
+            transition: background-color 0.3s ease;
+        }
+        .faq-item:hover {
+            background-color: rgba(107, 33, 168, 0.1);
+        }
+        .hero-image {
+            background: linear-gradient(to right, rgba(10, 15, 42, 0.8), rgba(10, 15, 42, 0)), 
+                        linear-gradient(to left, rgba(10, 15, 42, 0.8), rgba(10, 15, 42, 0)), 
+                        url('https://images.unsplash.com/photo-1620421680010-0766ff230392?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+        :focus {
+            outline: 2px solid #60A5FA;
+            outline-offset: 2px;
+        }
+        /* Custom Slider Styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #3B82F6;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            transition: transform 0.2s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #3B82F6;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            transition: transform 0.2s ease;
+        }
+        input[type="range"]::-moz-range-thumb:hover {
+            transform: scale(1.2);
+        }
+        /* Particle Animations */
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #60A5FA 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(-20px); opacity: 0.8; }
+            100% { transform: translateY(0); opacity: 0.4; }
+        }
+        /* Pulse Animation for Background */
+        @keyframes pulse-slow {
+            0% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+            100% { opacity: 0.2; }
+        }
+    </style>
+</head>
+<body class="antialiased deep-navy">
+    <!-- Navigation -->
+    <nav class="deep-navy shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <i data-feather="dollar-sign" class="wow-blue h-8 w-8"></i>
+                    <span class="ml-2 text-xl font-bold">WoW Health Solutions</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#employee-benefits" class="px-3 py-2 rounded-md text-sm font-medium hover:text-wow-blue transition">Employee Benefits</a>
+                    <a href="#employer-benefits" class="px-3 py-2 rounded-md text-sm font-medium hover:text-wow-blue transition">Employer Savings</a>
+                    <a href="#faqs" class="px-3 py-2 rounded-md text-sm font-medium hover:text-wow-blue transition">FAQs</a>
+                    <a href="https://calendly.com/wowhealthsolutions/30min" class="ml-4 px-4 py-2 rounded-md text-sm font-medium bg-transparent cta-button text-wow-blue hover:text-white pulse-animation">
+                        Book Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative wow-gradient pt-16 hero-image">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl leading-tight">
+                Slash $681 Per Employee in Taxes<br>While Boosting Take-Home Pay by $864 – At Zero Cost
+            </h1>
+            <p class="mt-6 max-w-lg mx-auto text-xl opacity-90">
+                Unlock the power of an IRS-approved Section 125 plan to save $681.60 per employee annually while increasing their take-home pay by $864/year – with no out-of-pocket costs.
+            </p>
+            <div class="mt-10">
+                <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-8 py-3 rounded-md text-base font-medium cta-button text-white bg-transparent md:py-4 md:text-lg md:px-10">
+                    <i data-feather="calendar" class="mr-2"></i> Book Free 15-Minute Call
+                </a>
+            </div>
+            <div class="mt-8 flex justify-center space-x-6">
+                <div class="inline-flex rounded-md shadow-lg bg-deep-navy/50 backdrop-blur-sm">
+                    <div class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-wow-light-blue">
+                        <i data-feather="check-circle" class="mr-2"></i> 100% IRS-Compliant
+                    </div>
+                </div>
+                <div class="inline-flex rounded-md shadow-lg bg-deep-navy/50 backdrop-blur-sm">
+                    <div class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-wow-light-blue">
+                        <i data-feather="dollar-sign" class="mr-2"></i> Zero Cost Implementation
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="bg-deep-navy p-6 rounded-lg shadow-lg border border-wow-blue/20" data-aos="fade-up">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-wow-blue/20 text-wow-blue">
+                            <i data-feather="dollar-sign"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-lg font-medium">$681.60</p>
+                            <p class="text-sm opacity-70">Employer Savings Per Employee</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-deep-navy p-6 rounded-lg shadow-lg border border-wow-light-blue/20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-wow-light-blue/20 text-wow-light-blue">
+                            <i data-feather="user-plus"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-lg font-medium">$864</p>
+                            <p class="text-sm opacity-70">Employee Annual Take-Home Increase</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-deep-navy p-6 rounded-lg shadow-lg border border-wow-purple/20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-wow-purple/20 text-wow-purple">
+                            <i data-feather="clock"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-lg font-medium">24/7</p>
+                            <p class="text-sm opacity-70">Virtual Care & Counseling</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-deep-navy p-6 rounded-lg shadow-lg border border-wow-blue/20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-wow-blue/20 text-wow-blue">
+                            <i data-feather="users"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-lg font-medium">100%</p>
+                            <p class="text-sm opacity-70">Of W2 Employees Eligible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employee Benefits Section -->
+    <div id="employee-benefits" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">
+                    Your Employees Get <span class="wow-blue">$72 More Monthly</span> Without Raising Salaries
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl opacity-80 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Plus these incredible health benefits at absolutely no cost to them or you:
+                </p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="pt-6 benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flow-root bg-deep-navy rounded-lg px-6 pb-8 h-full border border-wow-blue/20">
+                        <div class="-mt-6">
+                            <span class="inline-flex items-center justify-center p-3 bg-wow-blue/30 rounded-md shadow-lg">
+                                <i data-feather="heart" class="h-6 w-6 text-wow-blue"></i>
+                            </span>
+                            <h3 class="mt-8 text-lg font-medium">Virtual Urgent Care 24/7</h3>
+                            <p class="mt-5 text-base opacity-80">
+                                Employees get instant access to board-certified doctors anytime, anywhere via phone or video.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flow-root bg-deep-navy rounded-lg px-6 pb-8 h-full border border-wow-light-blue/20">
+                        <div class="-mt-6">
+                            <span class="inline-flex items-center justify-center p-3 bg-wow-light-blue/30 rounded-md shadow-lg">
+                                <i data-feather="message-square" class="h-6 w-6 text-wow-light-blue"></i>
+                            </span>
+                            <h3 class="mt-8 text-lg font-medium">Crisis Tele-Counseling</h3>
+                            <p class="mt-5 text-base opacity-80">
+                                Licensed counselors available around the clock for mental health support when employees need it most.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flow-root bg-deep-navy rounded-lg px-6 pb-8 h-full border border-wow-purple/20">
+                        <div class="-mt-6">
+                            <span class="inline-flex items-center justify-center p-3 bg-wow-purple/30 rounded-md shadow-lg">
+                                <i data-feather="activity" class="h-6 w-6 text-wow-purple"></i>
+                            </span>
+                            <h3 class="mt-8 text-lg font-medium">Generic Medications (93% Covered)</h3>
+                            <p class="mt-5 text-base opacity-80">
+                                Most common generic prescriptions covered with minimal or no copay through our pharmacy network.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flow-root bg-deep-navy rounded-lg px-6 pb-8 h-full border border-wow-blue/20">
+                        <div class="-mt-6">
+                            <span class="inline-flex items-center justify-center p-3 bg-wow-blue/30 rounded-md shadow-lg">
+                                <i data-feather="user" class="h-6 w-6 text-wow-blue"></i>
+                            </span>
+                            <h3 class="mt-8 text-lg font-medium">Virtual Primary Care</h3>
+                            <p class="mt-5 text-base opacity-80">
+                                Scheduled appointments with primary care physicians without leaving home or work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flow-root bg-deep-navy rounded-lg px-6 pb-8 h-full border border-wow-light-blue/20">
+                        <div class="-mt-6">
+                            <span class="inline-flex items-center justify-center p-3 bg-wow-light-blue/30 rounded-md shadow-lg">
+                                <i data-feather="mail" class="h-6 w-6 text-wow-light-blue"></i>
+                            </span>
+                            <h3 class="mt-8 text-lg font-medium">Messaging Specialists</h3>
+                            <p class="mt-5 text-base opacity-80">
+                                Secure messaging with healthcare professionals for non-urgent questions and prescription refills.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flow-root bg-deep-navy rounded-lg px-6 pb-8 h-full border border-wow-purple/20">
+                        <div class="-mt-6">
+                            <span class="inline-flex items-center justify-center p-3 bg-wow-purple/30 rounded-md shadow-lg">
+                                <i data-feather="home" class="h-6 w-6 text-wow-purple"></i>
+                            </span>
+                            <h3 class="mt-8 text-lg font-medium">In-Person Care Discounts</h3>
+                            <p class="mt-5 text-base opacity-80">
+                                50% coverage for in-person primary & urgent care at any facility nationwide, no network restrictions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-8 py-3 rounded-md text-base font-medium cta-button text-white bg-transparent md:py-4 md:text-lg md:px-10">
+                    See Exact Savings for Your Team
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employer Benefits Section -->
+    <div id="employer-benefits" class="py-16 bg-deep-navy/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">
+                    <span class="wow-blue">$68,160 Annual Savings</span> for 100 Employees
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl opacity-80 lg:mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Plus reduced workers' comp costs and happier, more productive employees.
+                </p>
+            </div>
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div class="relative" data-aos="fade-right">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-wow-blue/30 text-wow-blue">
+                            <i data-feather="dollar-sign"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium">FICA Tax Savings</p>
+                        <p class="mt-2 ml-16 text-base opacity-80">
+                            Section 125 reduces taxable wages, lowering your FICA tax burden by $681.60 per employee annually.
+                        </p>
+                    </div>
+                    <div class="relative" data-aos="fade-left" data-aos-delay="100">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-wow-light-blue/30 text-wow-light-blue">
+                            <i data-feather="users"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium">All W2 Employees Eligible</p>
+                        <p class="mt-2 ml-16 text-base opacity-80">
+                            Full-time, part-time, seasonal - all W2 employees qualify. No minimum hours requirement.
+                        </p>
+                    </div>
+                    <div class="relative" data-aos="fade-right" data-aos-delay="200">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-wow-purple/30 text-wow-purple">
+                            <i data-feather="layers"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium">Stacks With Existing Benefits</p>
+                        <p class="mt-2 ml-16 text-base opacity-80">
+                            Works alongside your current health plans. In fact, it makes them up to 90% more affordable.
+                        </p>
+                    </div>
+                    <div class="relative" data-aos="fade-left" data-aos-delay="300">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-wow-blue/30 text-wow-blue">
+                            <i data-feather="shield"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium">100% IRS-Compliant</p>
+                        <p class="mt-2 ml-16 text-base opacity-80">
+                            Established tax code (Section 125) used by thousands of employers nationwide since 1978.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 bg-deep-navy rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+                <div class="px-4 py-5 bg-deep-navy/50">
+                    <h3 class="text-lg leading-6 font-medium">
+                        Example Savings for 100 Employees
+                    </h3>
+                </div>
+                <div class="border-t border-wow-blue/20">
+                    <dl>
+                        <div class="bg-deep-navy px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium opacity-70">
+                                Employer FICA Savings
+                            </dt>
+                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                                $68,160 annually (100 employees × $681.60)
+                            </dd>
+                        </div>
+                        <div class="bg-deep-navy/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium opacity-70">
+                                Employee Take-Home Increase
+                            </dt>
+                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                                $86,400 annually (100 employees × $864)
+                            </dd>
+                        </div>
+                        <div class="bg-deep-navy px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium opacity-70">
+                                Workers' Comp Savings
+                            </dt>
+                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                                Additional 5-15% savings (varies by state)
+                            </dd>
+                        </div>
+                        <div class="bg-deep-navy/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium opacity-70">
+                                Implementation Cost
+                            </dt>
+                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                                $0 - We handle everything at no cost to you
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="mt-8" data-aos="fade-up">
+                <canvas id="savingsChart" class="max-w-full"></canvas>
+            </div>
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-bold" data-aos="fade-up">
+                    Don’t Let Tax Savings Pass You By
+                </h3>
+                <div class="mt-8">
+                    <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-8 py-3 rounded-md text-base font-medium cta-button text-white bg-transparent md:py-4 md:text-lg md:px-10 pulse-animation">
+                        <i data-feather="clock" class="mr-2"></i> Every Day You Wait Costs You Money
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="text-4xl font-extrabold sm:text-5xl">
+                    How It Works
+                </h2>
+                <p class="mt-4 text-xl opacity-80">
+                    A simple, seamless process to unlock savings and benefits.
+                </p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="benefit-card text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-wow-blue/30 text-wow-blue p-6 rounded-full mb-4">
+                        <i class="fas fa-calendar-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium">Schedule a Time</h3>
+                    <p class="mt-2 opacity-80">
+                        Book a quick call to discuss your needs with our experts.
+                    </p>
+                </div>
+                <div class="benefit-card text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-wow-light-blue/30 text-wow-light-blue p-6 rounded-full mb-4">
+                        <i class="fas fa-file-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium">Share Payroll Data</h3>
+                    <p class="mt-2 opacity-80">
+                        Provide your payroll details, and we’ll handle the analysis.
+                    </p>
+                </div>
+                <div class="benefit-card text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="bg-wow-purple/30 text-wow-purple p-6 rounded-full mb-4">
+                        <i class="fas fa-clipboard-check text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium">Receive Your Report</h3>
+                    <p class="mt-2 opacity-80">
+                        Get a detailed savings analysis within 24 hours.
+                    </p>
+                </div>
+                <div class="benefit-card text-center" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="bg-wow-blue/30 text-wow-blue p-6 rounded-full mb-4">
+                        <i class="fas fa-hand-holding-usd text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium">Start Saving</h3>
+                    <p class="mt-2 opacity-80">
+                        See savings and benefits in just 30 days.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-10 py-4 rounded-md text-xl font-medium cta-button text-white bg-transparent">
+                    Get Started Today
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="wow-gradient py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">
+                    Join Hundreds of Employers Saving with Section 125
+                </h2>
+            </div>
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div class="relative bg-deep-navy/50 backdrop-blur-sm p-6 rounded-lg" data-aos="fade-right">
+                        <div class="absolute -top-5 -left-5 h-12 w-12 rounded-full bg-white text-wow-blue flex items-center justify-center">
+                            <i data-feather="user"></i>
+                        </div>
+                        <p class="italic text-lg">"We saved $42,000 in the first year without changing our benefits package. Our employees love the extra take-home pay."</p>
+                        <p class="mt-4 font-medium">- CFO, Manufacturing Company (62 employees)</p>
+                    </div>
+                    <div class="relative bg-deep-navy/50 backdrop-blur-sm p-6 rounded-lg" data-aos="fade-left" data-aos-delay="100">
+                        <div class="absolute -top-5 -left-5 h-12 w-12 rounded-full bg-white text-wow-blue flex items-center justify-center">
+                            <i data-feather="user"></i>
+                        </div>
+                        <p class="italic text-lg">"Implementation was seamless. WoW handled everything, and we saw savings immediately."</p>
+                        <p class="mt-4 font-medium">- HR Director, Tech Startup (35 employees)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-8 py-3 rounded-md text-base font-medium cta-button text-white bg-transparent md:py-4 md:text-lg md:px-10">
+                    Join These Smart Employers
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="faqs" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+            <div class="mt-12 space-y-6">
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">Is this too good to be true?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Not at all. Section 125 of the IRS code has been used since 1978. It’s a proven tax strategy that reduces FICA taxes for employers and boosts employee take-home pay. Lack of awareness is the only reason more companies don’t use it.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">Is the plan fully compliant?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Yes, independently verified by Hitesman & Associates and CBIZ Advisors, ensuring full compliance with IRS Section 125, ACA, and ERISA regulations.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">Are there hidden costs?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            None. Zero implementation fees, no monthly costs. We’re compensated through the savings we generate, so if you don’t save, we don’t earn.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">How complex is implementation?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Incredibly simple. Share payroll data once, and we manage calculations, compliance, and employee communications. Most employers are set up in 2 weeks.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">What if we already have benefits?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Section 125 enhances existing benefits by reducing taxable payroll, making your current plans up to 90% more affordable without added costs.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">Who can participate?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            All W2 employees on U.S. payroll, including full-time, part-time, and seasonal, with no minimum hours required.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">What benefits are included?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Health insurance premiums, HSAs, FSAs, dependent care, and more, with our plan emphasizing virtual care, counseling, and medications.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="800">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">How does it affect taxes?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Pre-tax deductions reduce taxable income, saving employers on FICA taxes and increasing employee take-home pay.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-deep-navy shadow rounded-lg overflow-hidden faq-item" data-aos="fade-up" data-aos-delay="900">
+                    <div class="px-4 py-5 sm:px-6 border-b border-wow-blue/20 cursor-pointer transition-colors duration-300 hover:bg-wow-blue/10">
+                        <h3 class="text-lg leading-6 font-medium">Can spouses and dependents join?</h3>
+                    </div>
+                    <div class="faq-answer px-4 py-5 sm:p-6 hidden">
+                        <p class="text-base opacity-80">
+                            Yes, benefits can extend to spouses and dependents, adding significant value for employees.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-bold" data-aos="fade-up">
+                    Still Have Questions?
+                </h3>
+                <p class="mt-4 text-xl opacity-80" data-aos="fade-up" data-aos-delay="100">
+                    Our experts are ready to answer them during your free consultation.
+                </p>
+                <div class="mt-8">
+                    <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-8 py-3 rounded-md text-base font-medium cta-button text-white bg-transparent md:py-4 md:text-lg md:px-10">
+                        Get All Your Questions Answered
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA Section -->
+    <div class="wow-gradient py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-extrabold sm:text-4xl">
+                <span class="block">Every Day You Delay,</span>
+                <span class="block">You’re Losing Money</span>
+            </h2>
+            <p class="mt-6 max-w-lg mx-auto text-xl opacity-90">
+                A 100-employee company misses out on $186.73 in savings daily. Act now to maximize your benefits.
+            </p>
+            <div class="mt-10">
+                <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-8 py-3 rounded-md text-base font-medium cta-button text-white bg-transparent md:py-4 md:text-lg md:px-10 pulse-animation">
+                    <i data-feather="clock" class="mr-2"></i> Book a Time with Our Expert Now
+                </a>
+            </div>
+            <div class="mt-8">
+                <p class="text-wow-light-blue">
+                    <i data-feather="alert-circle" class="inline mr-2"></i> Limited spots available – don’t wait!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <h3 class="text-lg font-bold">WoW Health Solutions</h3>
+                    <p class="mt-4 text-sm opacity-70">
+                        Helping employers maximize tax savings while providing incredible benefits to employees at ZERO net cost.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Quick Links</h3>
+                    <ul class="mt-4 space-y-2 text-sm opacity-70">
+                        <li><a href="#employee-benefits" class="hover:text-wow-blue">Employee Benefits</a></li>
+                        <li><a href="#employer-benefits" class="hover:text-wow-blue">Employer Savings</a></li>
+                        <li><a href="#faqs" class="hover:text-wow-blue">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Contact</h3>
+                    <ul class="mt-4 space-y-2 text-sm opacity-70">
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="flex-shrink-0 h-4 w-4 mr-2"></i>
+                            <span>moe@mywowhealth.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="flex-shrink-0 h-4 w-4 mr-2"></i>
+                            <span>(312) 535-2008</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Get Started</h3>
+                    <div class="mt-4">
+                        <a href="https://calendly.com/wowhealthsolutions/30min" class="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium cta-button text-wow-blue hover:text-white">
+                            Book Free Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-wow-blue/20 pt-8">
+                <p class="text-sm opacity-50 text-center">
+                    &copy; 2025 WoW Health Solutions. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        feather.replace();
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item > div:first-child').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.classList.toggle('hidden');
+            });
+        });
+
+        // Savings Chart
+        const ctx = document.getElementById('savingsChart').getContext('2d');
+        const savingsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Employer FICA', 'Employee Take-Home', 'Workers\' Comp'],
+                datasets: [{
+                    label: 'Annual Savings (100 Employees)',
+                    data: [68160, 86400, 0],
+                    backgroundColor: ['#3B82F6', '#60A5FA', '#6B21A8'],
+                    borderColor: ['#FFFFFF'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#FFFFFF33' },
+                        ticks: { color: '#FFFFFF' }
+                    },
+                    x: {
+                        grid: { color: '#FFFFFF33' },
+                        ticks: { color: '#FFFFFF' }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#FFFFFF' } }
+                },
+                responsive: true
+            }
+        });
+
+        // Savings Calculator Logic
+        const slider = document.getElementById('employee-slider');
+        const input = document.getElementById('employee-input');
+        const count = document.getElementById('employee-count');
+        const employerSavings = document.getElementById('employer-savings');
+        const employeeTotal = document.getElementById('employee-total');
+        const savingsBar = document.getElementById('savings-bar');
+        const tooltip = document.getElementById('slider-tooltip');
+        const tooltipValue = document.getElementById('tooltip-value');
+
+        function formatNumber(num) {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function updateCalculator(value) {
+            value = Math.max(1, Math.min(500, value));
+            count.textContent = value;
+            employerSavings.textContent = formatNumber(value * 681.60);
+            employeeTotal.textContent = formatNumber(value * 864);
+            savingsBar.style.width = `${(value / 500) * 100}%`;
+            tooltipValue.textContent = value;
+            slider.value = value;
+            input.value = value;
+
+            const percent = (value - slider.min) / (slider.max - slider.min);
+            const thumbWidth = 20;
+            const sliderWidth = slider.offsetWidth - thumbWidth;
+            const tooltipWidth = tooltip.offsetWidth;
+            tooltip.style.left = `calc(${percent * 100}% + ${thumbWidth / 2 - tooltipWidth / 2}px)`;
+
+            anime({
+                targets: '.bg-deep-navy/70',
+                scale: [1, 1.05, 1],
+                duration: 600,
+                easing: 'easeOutQuad'
+            });
+
+            savingsChart.data.datasets[0].data[0] = value * 681.60;
+            savingsChart.data.datasets[0].data[1] = value * 864;
+            savingsChart.update();
+        }
+
+        slider.addEventListener('input', () => {
+            tooltip.classList.remove('hidden');
+            updateCalculator(slider.value);
+        });
+
+        slider.addEventListener('change', () => {
+            tooltip.classList.add('hidden');
+        });
+
+        input.addEventListener('input', () => {
+            let value = parseInt(input.value) || 1;
+            updateCalculator(value);
+        });
+
+        function animateNumber(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = formatNumber(value);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                }
+            };
+            requestAnimationFrame(step);
+        }
+
+        slider.addEventListener('input', () => {
+            const value = parseInt(slider.value);
+            animateNumber(employerSavings, parseInt(employerSavings.textContent.replace(/,/g, '')), value * 681.60, 500);
+            animateNumber(employeeTotal, parseInt(employeeTotal.textContent.replace(/,/g, '')), value * 864, 500);
+        });
+
+        document.querySelectorAll('.bg-deep-navy/70').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                anime({
+                    targets: card,
+                    scale: 1.05,
+                    boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)',
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+            card.addEventListener('mouseleave', () => {
+                anime({
+                    targets: card,
+                    scale: 1,
+                    boxShadow: '0 0 0 rgba(59, 130, 246, 0)',
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            });
+        });
+
+        updateCalculator(100);
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
